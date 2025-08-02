@@ -1,0 +1,160 @@
+.container {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f4f9ff, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  margin-top: 5rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #003c8f;
+  text-align: center;
+}
+
+.defaultSection {
+  margin-bottom: 2rem;
+}
+
+.defaultTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.defaultList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.defaultListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f4ff;
+  border: 1px solid #cce;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.defaultGoalText {
+  flex: 1;
+  color: #1a237e;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.defaultAddButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.defaultAddButton:disabled {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  cursor: default;
+}
+
+.goalList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.goalItem {
+  background: #e8f0fe;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 5px solid #2196f3;
+  color: #212121;
+}
+
+.goalItem:hover {
+  background: #d5e8fc;
+}
+
+.done {
+  text-decoration: line-through;
+  background-color: #c8e6c9;
+  border-left: 5px solid #4caf50;
+  color: #2e7d32;
+  opacity: 0.85;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  background-color: #fdfdff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.button {
+  padding: 0.8rem 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background-color: #388e3c;
+}
+.buttonSecondary {
+  padding: 0.8rem 1.2rem;
+  background-color: #4caf50;  /* Same green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buttonSecondary:hover {
+  background-color: #388e3c;  /* Slightly darker green on hover */
+}
+
+.deleteButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.deleteButton:hover {
+  background-color: #c62828; 
+  color: white;
+}
+
+

@@ -1,0 +1,115 @@
+/* styles/Home.module.css */
+
+.main {
+  min-height: 100vh;
+  font-family: serif;
+  background: linear-gradient(120deg, #f6f9fc, #e9f3ff);
+  color: #333;
+  padding-top: 80px; /* offset for fixed navbar */
+  padding-left: 0;
+   padding-top: 80px; 
+  padding-right: 0;
+}
+
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.goalList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #b288f2; /* your purple shade */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #141515;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem; /* ✅ Ensures even spacing like .activeLink */
+  border-radius: 8px;     /* ✅ So hover and active styles look same */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+
+.navLinks a:hover {
+  color: #0c0c0c;
+}
+.activeLink {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #e9e7ed;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+
+
