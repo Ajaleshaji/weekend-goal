@@ -41,7 +41,7 @@ export default function ThisWeekPage() {
   return (
     <div className={styles.container}>
       <Navbar />
-      <h1 className={styles.pageTitle}>🗓️ This Week's Goals</h1>
+      <h1 className={styles.pageTitle}> This Week's Goals</h1>
 
       {loading ? (
         <p>Loading goals...</p>
