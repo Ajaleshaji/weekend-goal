@@ -1,36 +1,40 @@
 import { NextResponse } from 'next/server';
-import connectDB from '@/lib/db';
+import { connectToDB } from '@/utils/db';
 import User from '@/models/User';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 export async function POST(req) {
-  await connectDB();
-  const { email, password } = await req.json();
+  try {
+    const { email, password } = await req.json();
 
-  const user = await User.findOne({ email });
-  if (!user) {
-    return NextResponse.json({ error: 'User not found' }, { status: 401 });
+    await connectToDB();
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
+    }
+
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '7d',
+    });
+
+    const res = NextResponse.json({ message: 'Login successful' });
+    res.cookies.set('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      path: '/',
+      maxAge: 7 * 24 * 60 * 60,
+    });
+
+    return res;
+  } catch (error) {
+    console.error('Login error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  const match = await bcrypt.compare(password, user.password);
-  if (!match) {
-    return NextResponse.json({ error: 'Wrong password' }, { status: 401 });
-  }
-
-  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-
-  const response = NextResponse.json({ success: true });
-
-  response.cookies.set({
-    name: 'token',
-    value: token,
-    httpOnly: true,
-    path: '/',
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: 60 * 60 * 24,
-  });
-
-  return response;
 }
