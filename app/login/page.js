@@ -42,7 +42,7 @@ export default function LoginPage() {
       />
       <button className={styles.authButton} onClick={handleLogin}>Login</button>
       <p className={styles.authLink}>
-        Don't have an account? <a href="/signup">Signup</a>
+        Don&apos;t have an account? <a href="/signup">Signup</a>
       </p>
     </div>
   );
